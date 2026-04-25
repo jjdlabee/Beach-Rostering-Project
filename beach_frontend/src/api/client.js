@@ -1,7 +1,7 @@
-import axios from 'axios'
+                import axios from 'axios'
 
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: import.meta.env.VITE_API_URL || '/api',
   headers: { 'Content-Type': 'application/json' },
 })
 
@@ -41,6 +41,6 @@ export default api
 
 // ── Public client (no auth headers) ──────────────────────────────────────────
 export const publicApi = axios.create({
-  baseURL: '/api/public',
+  baseURL: import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/public` : '/api/public',
   headers: { 'Content-Type': 'application/json' },
 })
