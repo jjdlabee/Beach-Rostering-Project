@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-sand-50 text-ocean-950;
+  }
+
+  h1, h2, h3 {
+    font-family: 'DM Serif Display', Georgia, serif;
+  }
+}
+
+@layer components {
+  /* Card */
+  .card {
+    @apply bg-white rounded-2xl shadow-card border border-sand-100 p-5;
+  }
+
+  /* Primary button */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-xl
+           bg-ocean-900 text-white text-sm font-medium
+           hover:bg-ocean-700 active:scale-95
+           transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Secondary/ghost button */
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-xl
+           border border-ocean-200 text-ocean-800 text-sm font-medium
+           hover:bg-ocean-50 active:scale-95
+           transition-all duration-150 disabled:opacity-50;
+  }
+
+  /* Danger button */
+  .btn-danger {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-xl
+           bg-red-600 text-white text-sm font-medium
+           hover:bg-red-700 active:scale-95 transition-all duration-150;
+  }
+
+  /* Form input */
+  .input {
+    @apply w-full rounded-xl border border-sand-200 bg-white px-3.5 py-2.5 text-sm
+           text-ocean-950 placeholder-sand-400
+           focus:outline-none focus:ring-2 focus:ring-ocean-400 focus:border-transparent
+           transition-shadow duration-150;
+  }
+
+  /* Form label */
+  .label {
+    @apply block text-xs font-semibold uppercase tracking-wider text-ocean-700 mb-1.5;
+  }
+
+  /* Status badge */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold;
+  }
+
+  /* Table */
+  .table-base {
+    @apply w-full text-sm;
+  }
+  .table-base thead tr {
+    @apply border-b border-sand-100;
+  }
+  .table-base thead th {
+    @apply py-3 px-4 text-left text-xs font-semibold uppercase tracking-wider text-ocean-500;
+  }
+  .table-base tbody tr {
+    @apply border-b border-sand-50 hover:bg-sand-50 transition-colors;
+  }
+  .table-base tbody td {
+    @apply py-3 px-4 text-ocean-800;
+  }
+
+  /* Page header */
+  .page-header {
+    @apply flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6;
+  }
+  .page-title {
+    @apply text-2xl text-ocean-900;
+  }
+}
+
+/* FullCalendar overrides */
+.fc {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.875rem !important;
+}
+.fc .fc-toolbar-title {
+  font-family: 'DM Serif Display', serif !important;
+  font-size: 1.25rem !important;
+  color: #0f4c5c;
+}
+.fc .fc-button-primary {
+  background-color: #0f4c5c !important;
+  border-color: #0f4c5c !important;
+  border-radius: 0.625rem !important;
+}
+.fc .fc-button-primary:hover {
+  background-color: #225f78 !important;
+}
+.fc .fc-daygrid-day-number {
+  color: #234f63;
+}
+.fc .fc-day-today {
+  background-color: #eff9fb !important;
+}
